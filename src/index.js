@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './main';
+import Header from './inc/header';
+import Nav from './inc/nav';
+import Main from './pages/main';
+import Footer from './inc/footer';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header />
+    <Nav />
     <Main />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
