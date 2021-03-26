@@ -4,21 +4,18 @@ import axios from 'axios';
 import { render, screen } from '@testing-library/react';
 
 
-class PharmAPI extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
+class Head extends Component {
 
     render() {
         return (
-        <header className="P-header">
-            <h4>Coucou! Ici c'est le header</h4>
-        </header>
+            <header className="P-header">
+                <h1>PharmAPI</h1>
+                <hr></hr>
+                <h2 id="page-title"></h2>
+            </header>
         )
     }
 }
 
 
-export default PharmAPI;
+export default Head;

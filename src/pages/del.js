@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './put.css'
 import axios from 'axios';
+import ReactDOM from 'react-dom';
 import { render, screen } from '@testing-library/react';
 
 
@@ -17,6 +18,8 @@ class putAPI extends Component {
     }
 
     componentDidMount() {
+        ReactDOM.render('', document.getElementById('page-title'));
+        ReactDOM.render('Supprimer pharmacies', document.getElementById('page-title'));
         axios.get(`http://localhost:8000/pharma`)
             .then(res => {
                 const pharma = res.data;
@@ -28,10 +31,10 @@ class putAPI extends Component {
         console.log(this.spharma.current.value)
         axios.delete('http://localhost:8000/pharma/' + this.spharma.current.value)
             .then(function (response) {
-            console.log(response);
+                console.log(response);
             })
             .catch(function (error) {
-            console.log(error);
+                console.log(error);
             });
     }
 
@@ -39,15 +42,14 @@ class putAPI extends Component {
         let pharma = this.state.pharmacies;
         return (
             <div>
-                <h1>Supprimer une pharmacie</h1>
                 <p>
-                <label for="pharmacie">Pharmacie : </label><br></br>
-                <select name="pharmacie" id="pharmacie" ref={this.spharma}>
-                {pharma.map(p =>
-                    <option value={p.id}>{p.nom}</option>
-                )}
-                </select>
-                <button onClick={this.delPharmacie}>Envoyer</button>
+                    <label htmlFor="pharmacie">Pharmacie : </label><br></br>
+                    <select name="pharmacie" id="pharmacie" ref={this.spharma}>
+                        {pharma.map(p =>
+                            <option value={p.id}>{p.nom}</option>
+                        )}
+                    </select>
+                    <button onClick={this.delPharmacie}>Envoyer</button>
                 </p>
             </div>
         )

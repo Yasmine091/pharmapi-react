@@ -13,9 +13,9 @@ class PharmAPI extends Component {
 
     render() {
         return (
-        <footer className="P-footer">
-            <h4>Ici c'est le footer</h4>
-        </footer>
+            <footer className="P-footer">
+                <h4>© Copyright PharmAPI ~ Tous les droits réservés</h4>
+            </footer>
         )
     }
 }

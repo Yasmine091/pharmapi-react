@@ -7,7 +7,6 @@ import Post from '../pages/post';
 import Del from '../pages/del';
 import { render, screen } from '@testing-library/react';
 
-
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -16,17 +15,16 @@ class Main extends Component {
         };
     }
 
-    
+
     render() {
         return (
             <main className="P-main">
                 <nav className="P-nav">
-                    <h1>Coucou! Voici ma 1ere page sur react!</h1>
-                    <button onClick={() => this.setState({ page: 'getA' })}>Liste</button>
-                    <button onClick={() => this.setState({ page: 'get' })}>Garde</button>
-                    <button onClick={() => this.setState({ page: 'post' })}>Ajouter</button>
-                    <button onClick={() => this.setState({ page: 'put' })}>Modifier</button>
-                    <button onClick={() => this.setState({ page: 'del' })}>Supprimer</button>
+                    <button onClick={() => this.setState({ page: 'getA' })}>Liste des pharmacies</button>
+                    <button onClick={() => this.setState({ page: 'get' })}>Pharmacies de garde</button>
+                    <button onClick={() => this.setState({ page: 'post' })}>Ajouter pharmacies</button>
+                    <button onClick={() => this.setState({ page: 'put' })}>Modifier pharmacies</button>
+                    <button onClick={() => this.setState({ page: 'del' })}>Supprimer pharmacies</button>
                 </nav>
 
                 {this.state.page === 'getA' &&
@@ -54,7 +52,7 @@ class Main extends Component {
 
                     <Del />
 
-                } 
+                }
             </main>
 
         )
