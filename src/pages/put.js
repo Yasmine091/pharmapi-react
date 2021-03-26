@@ -51,6 +51,7 @@ class putAPI extends Component {
         }
         
         showSelectedPharmacie() {
+            this.componentDidMount();
             ReactDOM.render('', document.getElementById('form'));
             this.setState({ toggled: false });
             let pharma = this.state.pharmacies;
