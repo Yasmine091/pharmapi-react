@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './post.css'
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import { render, screen } from '@testing-library/react';
 
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 class postAPI extends Component {
     constructor(props) {
@@ -23,7 +22,7 @@ class postAPI extends Component {
     }
 
     putPharmacie() {
-        axios.post('http://localhost:8000/pharma', {
+        axios.post('/pharma', {
             nom: this.fnom.current.value,
             quartier: this.fquartier.current.value,
             ville: this.fville.current.value,
@@ -39,7 +38,7 @@ class postAPI extends Component {
 
     render() {
         return (
-            <div>
+            <div class="form">
                 <p>
                     <label htmlFor="nom">Nom : </label><br></br>
                     <input ref={this.fnom} type="text" id="nom" name="nom" placeholder="Nom de la pharmacie"></input>

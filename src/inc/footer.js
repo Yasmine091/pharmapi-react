@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './footer.css'
-import axios from 'axios';
-import { render, screen } from '@testing-library/react';
 
 
 class PharmAPI extends Component {
@@ -14,7 +12,9 @@ class PharmAPI extends Component {
     render() {
         return (
             <footer className="P-footer">
+                <div class="spacing">
                 <h4>© Copyright PharmAPI ~ Tous les droits réservés</h4>
+                </div>
             </footer>
         )
     }

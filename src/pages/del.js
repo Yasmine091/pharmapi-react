@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './put.css'
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import { render, screen } from '@testing-library/react';
+
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 
 class putAPI extends Component {
@@ -20,7 +20,7 @@ class putAPI extends Component {
     componentDidMount() {
         ReactDOM.render('', document.getElementById('page-title'));
         ReactDOM.render('Supprimer pharmacies', document.getElementById('page-title'));
-        axios.get(`http://localhost:8000/pharma`)
+        axios.get(`/pharma`)
             .then(res => {
                 const pharma = res.data;
                 this.setState({ pharmacies: pharma });
@@ -29,7 +29,7 @@ class putAPI extends Component {
 
     delPharmacie() {
         console.log(this.spharma.current.value)
-        axios.delete('http://localhost:8000/pharma/' + this.spharma.current.value)
+        axios.delete('/pharma/' + this.spharma.current.value)
             .then(function (response) {
                 console.log(response);
             })
@@ -41,7 +41,7 @@ class putAPI extends Component {
     render() {
         let pharma = this.state.pharmacies;
         return (
-            <div>
+            <div class="form">
                 <p>
                     <label htmlFor="pharmacie">Pharmacie : </label><br></br>
                     <select name="pharmacie" id="pharmacie" ref={this.spharma}>
@@ -49,7 +49,7 @@ class putAPI extends Component {
                             <option value={p.id}>{p.nom}</option>
                         )}
                     </select>
-                    <button onClick={this.delPharmacie}>Envoyer</button>
+                    <button onClick={this.delPharmacie}>Supprimer</button>
                 </p>
             </div>
         )

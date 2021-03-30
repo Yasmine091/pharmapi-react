@@ -5,7 +5,6 @@ import GetA from '../pages/getA';
 import Put from '../pages/put';
 import Post from '../pages/post';
 import Del from '../pages/del';
-import { render, screen } from '@testing-library/react';
 
 class Main extends Component {
     constructor(props) {
@@ -20,12 +19,20 @@ class Main extends Component {
         return (
             <main className="P-main">
                 <nav className="P-nav">
-                    <button onClick={() => this.setState({ page: 'getA' })}>Liste des pharmacies</button>
-                    <button onClick={() => this.setState({ page: 'get' })}>Pharmacies de garde</button>
-                    <button onClick={() => this.setState({ page: 'post' })}>Ajouter pharmacies</button>
-                    <button onClick={() => this.setState({ page: 'put' })}>Modifier pharmacies</button>
-                    <button onClick={() => this.setState({ page: 'del' })}>Supprimer pharmacies</button>
+                    <button class="b-get" onClick={() => this.setState({ page: 'getA' })}>Liste des pharmacies</button>
+                    <button class="b-get" onClick={() => this.setState({ page: 'get' })}>Pharmacies de garde</button>
+                    <button class="b-post" onClick={() => this.setState({ page: 'post' })}>Ajouter pharmacies</button>
+                    <button class="b-put" onClick={() => this.setState({ page: 'put' })}>Modifier pharmacies</button>
+                    <button class="b-del" onClick={() => this.setState({ page: 'del' })}>Supprimer pharmacies</button>
                 </nav>
+
+                <div id="contents">
+                    <div class="spacing">
+
+                {this.state.page === null &&
+
+                    <GetA />
+                }
 
                 {this.state.page === 'getA' &&
 
@@ -53,6 +60,8 @@ class Main extends Component {
                     <Del />
 
                 }
+                    </div>
+                </div>
             </main>
 
         )

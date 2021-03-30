@@ -1,0 +1,147 @@
+.P-nav{
+    margin: 0.40rem auto;
+    width: auto;
+    max-width: 48.8rem;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.P-nav button {
+    border: 3px solid;
+    margin: 0rem 0.2rem;
+    width: max-content;
+    max-width: 100%;
+    border-radius: 6px;
+    font-size: 1rem !important;
+    height: 4rem;
+    color: #000;
+    font-weight: 500;
+}
+
+@media (max-width:400px){
+    .P-nav button {
+        border: 3px solid;
+        margin: 0.2rem 0rem;
+        width: 100%;
+        max-width: 360px;
+        border-radius: 6px;
+        font-size: 1rem !important;
+        height: 3rem;
+        color: #000;
+        font-weight: 500;
+    }
+
+    .P-nav{
+        margin: 0.40rem auto;
+        width: auto;
+        max-width: 100%;
+        border-radius: 6px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .form select {
+        border: 3px solid #0c101b;
+        border-radius: 3px;
+        height: 3rem !important;
+        color: #0c101b;
+        margin: 6px 0px;
+        background-color: #3b465f;
+    }
+}
+
+@media (max-width:640px){
+    .P-nav button {
+        border: 3px solid;
+        margin: 0.2rem 0rem;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 6px;
+        font-size: 1rem !important;
+        height: 3rem;
+        color: #000;
+        font-weight: 500;
+    }
+
+    .P-nav{
+        margin: 0.40rem auto;
+        width: auto;
+        max-width: 100%;
+        border-radius: 6px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .form select {
+        border: 3px solid #0c101b;
+        border-radius: 3px;
+        height: 3rem !important;
+        color: #0c101b;
+        margin: 6px 0px;
+        background-color: #3b465f;
+    }
+}
+
+#contents{
+    border: 3px solid #3b465f;
+    margin: 0.25rem auto;
+    width: auto;
+    max-width: 48rem;
+    border-radius: 6px;
+    background-color: #151f38;
+    font-size: 0.9rem !important;
+}
+
+.b-get {
+    border-color: #073e76 !important;
+    background-color: #007fff;
+}
+
+.b-post {
+    border-color: #076907 !important;
+    background-color: #00ff00;
+}
+
+.b-put {
+    border-color: #6e3700 !important;
+    background-color: #ff8000;
+}
+
+.b-del {
+    border-color: #720672 !important;
+    background-color: #ff00ff;
+}
+
+.form input {
+    border: 2px solid #3b465f;
+    width: 100%;
+    max-width: 16rem;
+    border-radius: 3px;
+    height: 1.7rem;
+    color: #fff;
+    background-color: #151f38;
+    margin: 6px 0px;
+}
+
+.form button {
+    border: 3px solid #0c101b;
+    width: 100%;
+    max-width: 16rem;
+    border-radius: 3px;
+    height: 2rem;
+    color: #3b465f;
+    background-color: #0c101b;
+    font-weight: 500;
+}
+
+.form select {
+    border: 3px solid #0c101b;
+    border-radius: 3px;
+    height: 2rem;
+    color: #0c101b;
+    margin: 6px;
+    margin-left: 0px;
+    background-color: #3b465f;
+}

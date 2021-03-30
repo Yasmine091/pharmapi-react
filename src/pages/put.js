@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './put.css'
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import { render, screen } from '@testing-library/react';
 
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 class putAPI extends Component {
     constructor(props) {
@@ -28,7 +27,7 @@ class putAPI extends Component {
     componentDidMount() {
         ReactDOM.render('', document.getElementById('page-title'));
         ReactDOM.render('Modifier pharmacies', document.getElementById('page-title'));
-        axios.get(`http://localhost:8000/pharma/`)
+        axios.get(`/pharma/`)
             .then(res => {
                 const pharma = res.data;
                 this.setState({ pharmacies: pharma });
@@ -36,7 +35,7 @@ class putAPI extends Component {
     }
 
     editPharmacie() {
-        axios.put('http://localhost:8000/pharma/' + this.fid.current.value, {
+        axios.put('/pharma/' + this.fid.current.value, {
             nom: this.fnom.current.value,
             quartier: this.fquartier.current.value,
             ville: this.fville.current.value,
@@ -97,7 +96,7 @@ class putAPI extends Component {
         let pharma = this.state.pharmacies;
         return (
             <div>
-                <div>
+                <div class="form">
                     <p>
                         <label htmlFor="pharmacie">Pharmacie : </label><br></br>
                         <select name="pharmacie" id="pharmacie" ref={this.spharma}>
@@ -108,7 +107,7 @@ class putAPI extends Component {
                         <button onClick={this.showSelectedPharmacie}>Modifier</button>
                     </p>
                 </div>
-                <div id="form"></div>
+                <div id="form" class="form"></div>
             </div>
         )
     }

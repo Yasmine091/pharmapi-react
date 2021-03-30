@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import './get.css'
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import { render, screen } from '@testing-library/react';
 
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 class getAPI extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pharmacie: []
+            pharmacies: []
         };
         this.componentDidMount = this.componentDidMount.bind(this);
         this.render = this.render.bind(this);
@@ -18,20 +17,25 @@ class getAPI extends Component {
     componentDidMount() {
         ReactDOM.render('', document.getElementById('page-title'));
         ReactDOM.render('Pharmacies de garde', document.getElementById('page-title'));
-        axios.get(`http://localhost:8000/pharma-garde`)
+        axios.get(`/pharma-garde`)
             .then(res => {
                 const pharma = res.data;
-                this.setState({ pharmacie: Object.values(pharma[0]) });
+                this.setState({ pharmacies: pharma });
             })
     }
 
     render() {
-        let pharma = this.state.pharmacie;
+        let pharma = this.state.pharmacies;
         return (
             <div>
-                <ul>
-                    {pharma.map(p => <li>{p}</li>)}
-                </ul>
+                    {pharma.map(p => 
+                    <ul>
+                    <li>Nom : {p.nom}</li>
+                    <li>Quartier : {p.quartier}</li>
+                    <li>Ville : {p.ville}</li>
+                    <li>Garde : {p.garde}</li>
+                    </ul>
+                    )}
             </div>
         )
     }

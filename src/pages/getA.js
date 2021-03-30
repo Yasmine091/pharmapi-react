@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './getA.css'
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import { render, screen } from '@testing-library/react';
 
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 class getAPI extends Component {
     constructor(props) {
@@ -18,7 +17,7 @@ class getAPI extends Component {
     componentDidMount() {
         ReactDOM.render('', document.getElementById('page-title'));
         ReactDOM.render('Liste des pharmacies', document.getElementById('page-title'));
-        axios.get(`http://localhost:8000/pharma`)
+        axios.get(`/pharma`)
             .then(res => {
                 const pharma = res.data;
                 this.setState({ pharmacies: pharma });
@@ -31,10 +30,10 @@ class getAPI extends Component {
             <div>
                 {pharma.map(p =>
                     <ul>
-                        <li>{p.nom}</li>
-                        <li>{p.quartier}</li>
-                        <li>{p.ville}</li>
-                        <li>{p.garde}</li>
+                        <li>Nom : {p.nom}</li>
+                        <li>Quartier : {p.quartier}</li>
+                        <li>Ville : {p.ville}</li>
+                        <li>Garde : {p.garde}</li>
                     </ul>
                 )}
             </div>

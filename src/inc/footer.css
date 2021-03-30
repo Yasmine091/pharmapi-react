@@ -1,0 +1,15 @@
+.P-footer{
+    border: 3px solid #3b465f;
+    margin: 0.25rem auto;
+    width: auto;
+    max-width: 48rem;
+    border-radius: 6px;
+    background-color: #151f38;
+}
+
+h4 {
+    font-weight: bolder;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
