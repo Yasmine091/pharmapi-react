@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
+import { render, screen } from '@testing-library/react';
 
 axios.defaults.baseURL = process.env.REACT_APP_API;
 
