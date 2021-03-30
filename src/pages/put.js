@@ -28,7 +28,7 @@ class putAPI extends Component {
     componentDidMount() {
         ReactDOM.render('', document.getElementById('page-title'));
         ReactDOM.render('Modifier pharmacies', document.getElementById('page-title'));
-        axios.get(`/pharma/`)
+        axios.get(`/pharma`)
             .then(res => {
                 const pharma = res.data;
                 this.setState({ pharmacies: pharma });
