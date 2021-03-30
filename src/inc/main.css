@@ -17,7 +17,8 @@
     font-size: 1rem !important;
     height: 4rem;
     color: #000;
-    font-weight: 500;
+    font-family: 'Comfortaa';
+    font-weight: 600;
 }
 
 @media (max-width:400px){
@@ -30,7 +31,8 @@
         font-size: 1rem !important;
         height: 3rem;
         color: #000;
-        font-weight: 500;
+        font-family: 'Comfortaa';
+        font-weight: 600;
     }
 
     .P-nav{
@@ -62,7 +64,8 @@
         font-size: 1rem !important;
         height: 3rem;
         color: #000;
-        font-weight: 500;
+        font-family: 'Comfortaa';
+        font-weight: 600;
     }
 
     .P-nav{
